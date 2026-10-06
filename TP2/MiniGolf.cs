@@ -40,6 +40,7 @@ public class MiniGolf
                 pistes.Add(new Piste(id, nom, difficulte));
                 compteur = 0;
             }
+            
         }
     }
 }
