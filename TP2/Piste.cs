@@ -10,5 +10,6 @@ public class Piste
         Id = id;
         Name = nom;
         Difficulte = difficulte;
+        
     }
 }
