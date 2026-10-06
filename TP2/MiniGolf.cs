@@ -1,5 +1,4 @@
 using System.Runtime.Serialization;
-using.
 
 namespace TP2;
 
@@ -9,7 +8,7 @@ public class MiniGolf
     
     string txt = File.ReadAllText("piste.txt");
 
-    public void alalal()
+    public void creePistes()
     {
         int compteur = 0;
         string id = "";
