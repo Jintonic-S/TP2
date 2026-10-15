@@ -9,6 +9,7 @@ public class Map
     private int Largeur { get; }
     private string[,] map; // Array pour pouvoir l'initialiser.
     StringBuilder builder = new();
+    private string affichage;
 
     public Map()
     {
@@ -28,12 +29,13 @@ public class Map
             }
             builder.Append("\n");
         }
-
+        builder.Append("\n");
+        affichage = builder.ToString();
     }
 
     public void afficherMap()
     {
-        Console.Write(builder.ToString());
+        Console.Write(affichage);
     }
 
 

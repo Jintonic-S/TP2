@@ -9,7 +9,10 @@ public class AffichageConsole
         map.afficherMap();
         Console.WriteLine($"{gestionJoueurs.GetJoueursDansMinigolf()} " +
                           $"joueur(s) présent(s) dans le mini-golf.\n");
-
+        foreach (var piste in minigolf.GetPistes())
+        {
+            Console.WriteLine($"O   {piste.GetId()}         {piste.GetName()} ({piste.GetDifficulte()})\n");
+        }
     }
 
     public static void AfficherHistoriqueJoueur(Joueur joueur)
