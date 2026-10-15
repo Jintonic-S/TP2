@@ -41,4 +41,9 @@ public class GestionJoueurs
         joueurDansMinigolf.Remove(joueur);
         joueur.GetHistorique().Push("Sortir du mini-golf.");
     }
+
+    public int GetJoueursDansMinigolf()
+    {
+        return joueurDansMinigolf.Count;
+    }
 }

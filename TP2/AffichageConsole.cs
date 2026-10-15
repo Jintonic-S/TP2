@@ -6,7 +6,10 @@ public class AffichageConsole
 {
     public static void Afficher(MiniGolf minigolf, Map map, GestionJoueurs gestionJoueurs)
     {
-        Console.WriteLine(map);
+        map.afficherMap();
+        Console.WriteLine($"{gestionJoueurs.GetJoueursDansMinigolf()} " +
+                          $"joueur(s) présent(s) dans le mini-golf.\n");
+
     }
 
     public static void AfficherHistoriqueJoueur(Joueur joueur)
