@@ -30,13 +30,13 @@ public class GestionJoueurs
         }
     }
 
-    public void EntrerJoueurDansMinigolf(Joueur joueur)
+    public void EntrerJoueurDansMiniGolf(Joueur joueur)
     {
         joueurDansMinigolf.Add(joueur);
         joueur.GetHistorique().Push("Entrer dans le mini-golf");
     }
 
-    public void SortirJoueurDuMinigolf(Joueur joueur)
+    public void SortirJoueurDuMiniGolf(Joueur joueur)
     {
         joueurDansMinigolf.Remove(joueur);
         joueur.GetHistorique().Push("Sortir du mini-golf.");

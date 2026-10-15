@@ -5,8 +5,8 @@ namespace TP2;
 public class MiniGolf
 {
     List<Piste> pistes; // Accès em O(1) et adaptable selon la quantité.
-    
-    string txt = File.ReadAllText("piste.txt");
+
+    string txt = File.ReadAllText("pistes.txt");
 
     public void creePistes()
     {
@@ -32,14 +32,14 @@ public class MiniGolf
                 }
                 else
                     compteur++;
-                
+
             }else if (compteur == 2)
             {
                 difficulte = txt[i];
                 pistes.Add(new Piste(id, nom, difficulte));
                 compteur = 0;
             }
-            
+
         }
     }
 }

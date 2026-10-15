@@ -6,12 +6,13 @@ public class AffichageConsole
 {
     public static void Afficher(MiniGolf minigolf, Map map, GestionJoueurs gestionJoueurs)
     {
+        Console.WriteLine(map);
     }
 
     public static void AfficherHistoriqueJoueur(Joueur joueur)
     {
         StringBuilder builder = new();
-        builder.Append($"### {joueur} ###\n");
+        builder.Append($"\n### {joueur.GetNom()} ###\n");
         foreach (var action in joueur.GetHistorique())
         {
             builder.Append($"- {action}\n");
