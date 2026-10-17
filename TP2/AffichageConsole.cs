@@ -18,7 +18,7 @@ public class AffichageConsole
     public static void AfficherHistoriqueJoueur(Joueur joueur)
     {
         StringBuilder builder = new();
-        builder.Append($"\n### {joueur.GetNom()} ###\n");
+        builder.Append($"\n### {joueur.GetNom()} ### \n");
         foreach (var action in joueur.GetHistorique())
         {
             builder.Append($"- {action}\n");
