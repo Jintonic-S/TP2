@@ -6,7 +6,7 @@ public class MiniGolf
 {
     List<Piste> pistes = new(); // Accès em O(1) et adaptable selon la quantité.
 
-    string txt = File.ReadAllText("pistes.txt");
+    readonly string txt = File.ReadAllText("pistes.txt");
 
     public MiniGolf()
     {

@@ -2,11 +2,11 @@ namespace TP2;
 
 public class GestionJoueurs
 {
-    private Dictionary<string, Queue<Joueur>> joueursDansFileAttente = new Dictionary<string, Queue<Joueur>>();
+    private Dictionary<string, Queue<Joueur>> joueursDansFileAttente = new ();
     // On veut associer une file d'attente de joueur à une piste.
-    private Dictionary<string, List<Joueur>> joueursDansPiste = new Dictionary<string, List<Joueur>>();
+    private Dictionary<string, List<Joueur>> joueursDansPiste = new();
     //On veut associer une liste de joueur à une piste.
-    private HashSet<Joueur> joueurDansMinigolf = new HashSet<Joueur>();
+    private HashSet<Joueur> joueurDansMinigolf = new();
     // On ne veut pas 2 fois les mêmes personnes dans le minigolf
 
     public void EntrerJoueurDansFileAttente(string pisteId, Joueur joueur)
