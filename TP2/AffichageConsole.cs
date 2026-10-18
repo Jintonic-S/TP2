@@ -20,10 +20,34 @@ public class AffichageConsole
     {
         map.AfficherMap();
         Console.WriteLine($"{gestionJoueurs.GetJoueursDansMinigolf()} " +
-                          $"joueur(s) présent(s) dans le mini-golf.\n");
+                          $"joueur(s) présent(s) dans le mini-golf.");
         foreach (var piste in minigolf.GetPistes())
         {
-            Console.WriteLine($"O   {piste.GetId()}         {piste.GetName()} ({piste.GetDifficulte()})\n");
+            int nbEnFile = gestionJoueurs.GetJoueursDansMinigolf();
+            int capacite = 4;
+
+            string nomEtDifficulte = $"{piste.GetName()} ({piste.GetDifficulte()})";
+            string ratio = $"{nbEnFile} / {capacite}";
+
+            double taux = (double)nbEnFile / capacite;
+
+            if (taux >= 1.0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (taux >= 0.75)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+
+            Console.Write("    0");
+            Console.ResetColor();
+            Console.Write($"    {piste.GetId()} {nomEtDifficulte} {ratio}");
+            Console.WriteLine();
         }
     }
 

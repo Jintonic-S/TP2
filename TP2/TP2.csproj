@@ -24,7 +24,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="stylecop.json" />
+      <None Update="pistes.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="map.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
