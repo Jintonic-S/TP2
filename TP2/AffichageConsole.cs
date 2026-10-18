@@ -1,3 +1,6 @@
+// <copyright file="AffichageConsole.cs" company="Cstjean">
+// Jimmy Sauton, Xsyan Lavoie.
+// </copyright>
 using System.Text;
 
 namespace TP2;
@@ -15,7 +18,7 @@ public class AffichageConsole
     /// <param name="gestionJoueurs">Informations des joueurs.</param>
     public static void Afficher(MiniGolf minigolf, Map map, GestionJoueurs gestionJoueurs)
     {
-        map.afficherMap();
+        map.AfficherMap();
         Console.WriteLine($"{gestionJoueurs.GetJoueursDansMinigolf()} " +
                           $"joueur(s) présent(s) dans le mini-golf.\n");
         foreach (var piste in minigolf.GetPistes())
@@ -36,6 +39,7 @@ public class AffichageConsole
         {
             builder.Append($"- {action}\n");
         }
+
         Console.WriteLine(builder.ToString());
     }
 }

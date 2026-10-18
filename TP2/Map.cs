@@ -1,16 +1,25 @@
+// <copyright file="Map.cs" company="Cstjean">
+// Jimmy Sauton, Xsyan Lavoie.
+// </copyright>
+
 using System.Text;
 
 namespace TP2;
 
+/// <summary>
+/// Classe de la map.
+/// </summary>
 public class Map
 {
     private string[] toutFichier = File.ReadAllLines("map.txt");
-    private int Hauteur { get; }
-    private int Largeur { get; }
+
     private string[,] map; // Array pour pouvoir l'initialiser.
-    StringBuilder builder = new();
+    private StringBuilder builder = new();
     private string affichage;
 
+    /// <summary>
+    /// Constructeur.
+    /// </summary>
     public Map()
     {
         string[] dimension = toutFichier[0].Split(';');
@@ -25,18 +34,28 @@ public class Map
             string ligneSansEspace = toutFichier[i + 1];
             for (int j = 0; j < ligneSansEspace.Length; j++)
             {
-                if(ligneSansEspace[j] != ' ') builder.Append(ligneSansEspace[j]);
+                if (ligneSansEspace[j] != ' ')
+                {
+                    builder.Append(ligneSansEspace[j]);
+                }
             }
+
             builder.Append("\n");
         }
+
         builder.Append("\n");
         affichage = builder.ToString();
     }
 
-    public void afficherMap()
+    private int Hauteur { get; }
+
+    private int Largeur { get; }
+
+    /// <summary>
+    /// Affiche la map.
+    /// </summary>
+    public void AfficherMap()
     {
         Console.Write(affichage);
     }
-
-
 }

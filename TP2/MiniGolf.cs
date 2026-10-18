@@ -1,18 +1,29 @@
-using System.Runtime.Serialization;
-
+// <copyright file="MiniGolf.cs" company="Cstjean">
+// Jimmy Sauton, Xsyan Lavoie.
+// </copyright>
 namespace TP2;
 
+/// <summary>
+/// Classe du mini-golf.
+/// </summary>
 public class MiniGolf
 {
-    List<Piste> pistes = new(); // Accès em O(1) et adaptable selon la quantité.
+    private List<Piste> pistes = new(); // Accès em O(1) et adaptable selon la quantité.
 
-    readonly string txt = File.ReadAllText("pistes.txt");
+    private string txt = File.ReadAllText("pistes.txt");
 
+    /// <summary>
+    /// Constructeur.
+    /// </summary>
     public MiniGolf()
     {
         CreePistes();
     }
 
+    /// <summary>
+    /// Méthode permettant de retourner une list de pistes.
+    /// </summary>
+    /// <returns>La liste de pistes.</returns>
     public List<Piste> CreePistes()
     {
         int compteur = 0;
@@ -29,17 +40,22 @@ public class MiniGolf
                     id += txt[i].ToString();
                 }
                 else
+                {
                     compteur++;
-            }else if (compteur == 1)
+                }
+            }
+            else if (compteur == 1)
             {
                 if (txt[i] != ';')
                 {
                     nom += txt[i].ToString();
                 }
                 else
+                {
                     compteur++;
-
-            }else if (compteur == 2)
+                }
+            }
+            else if (compteur == 2)
             {
                 difficulte = txt[i];
                 pistes.Add(new Piste(id, nom, difficulte));
@@ -47,11 +63,14 @@ public class MiniGolf
                 id = "";
                 nom = "";
             }
-
         }
+
         return pistes;
     }
 
-
+    /// <summary>
+    /// Retourne la liste de pistes.
+    /// </summary>
+    /// <returns>La liste de pistes.</returns>
     public List<Piste> GetPistes() => pistes;
 }

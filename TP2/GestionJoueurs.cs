@@ -1,3 +1,6 @@
+// <copyright file="GestionJoueurs.cs" company="Cstjean">
+// Jimmy Sauton, Xsyan Lavoie.
+// </copyright>
 namespace TP2;
 
 /// <summary>
