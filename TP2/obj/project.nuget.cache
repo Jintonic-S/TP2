@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oBdZUrv2CnQ=",
+  "dgSpecHash": "82hOcTJPQ7I=",
   "success": true,
   "projectFilePath": "C:\\Users\\lavoi\\RiderProjects\\TP2\\TP2\\TP2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lavoi\\.nuget\\packages\\stylecop.analyzers\\1.3.109-beta\\stylecop.analyzers.1.3.109-beta.nupkg.sha512",
+    "C:\\Users\\lavoi\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.556\\stylecop.analyzers.unstable.1.2.0.556.nupkg.sha512"
+  ],
   "logs": []
 }

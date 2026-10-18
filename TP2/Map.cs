@@ -1,46 +1,61 @@
+// <copyright file="Map.cs" company="Cstjean">
+// Jimmy Sauton, Xsyan Lavoie.
+// </copyright>
+
+using System.Text;
+
 namespace TP2;
 
+/// <summary>
+/// Classe de la map.
+/// </summary>
 public class Map
 {
     private string[] toutFichier = File.ReadAllLines("map.txt");
-    private int Hauteur { get; }
-    private int Largeur { get; }
+
     private string[,] map; // Array pour pouvoir l'initialiser.
+    private StringBuilder builder = new();
+    private string affichage;
+
+    /// <summary>
+    /// Constructeur.
+    /// </summary>
     public Map()
     {
         string[] dimension = toutFichier[0].Split(';');
-        
+
         Hauteur = int.Parse(dimension[0]);
-        Largeur = int.Parse(dimension[1]); 
-        
+        Largeur = int.Parse(dimension[1]);
+
         map = new string[Hauteur, Largeur];
-        
-        
+
         for (int i = 0; i < Hauteur; i++)
         {
-            string[] ligneSansEspace = toutFichier[i + 1].Split(' ');
-            
-            for (int j = 0; j < Largeur; j++)
+            string ligneSansEspace = toutFichier[i + 1];
+            for (int j = 0; j < ligneSansEspace.Length; j++)
             {
-                map[i, j] = ligneSansEspace[j];
+                if (ligneSansEspace[j] != ' ')
+                {
+                    builder.Append(ligneSansEspace[j]);
+                }
             }
+
+            builder.Append("\n");
         }
+
+        builder.Append("\n");
+        affichage = builder.ToString();
     }
 
-    public void afficherMap()
+    private int Hauteur { get; }
+
+    private int Largeur { get; }
+
+    /// <summary>
+    /// Affiche la map.
+    /// </summary>
+    public void AfficherMap()
     {
-        int compteur = 0;
-        foreach (var item in map)
-        {
-            if (compteur == Largeur)
-            {
-                compteur = 0;
-                Console.WriteLine();
-            }
-            Console.Write(item);
-            compteur++;
-        }
+        Console.Write(affichage);
     }
-    
-
 }

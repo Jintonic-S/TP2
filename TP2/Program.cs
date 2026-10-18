@@ -1,25 +1,36 @@
 ﻿namespace TP2;
+
+/// <summary>
+/// Classe du programme.
+/// </summary>
 public static class Program
 {
     private static readonly MiniGolf MiniGolf = new();
     private static readonly Map Map = new();
     private static readonly GestionJoueurs GestionJoueurs = new();
+
     private static void Afficher()
     {
         Thread.Sleep(1000);
         AffichageConsole.Afficher(MiniGolf, Map, GestionJoueurs);
     }
+
     private static void TestEntrerJoueur(Joueur joueur)
     {
         GestionJoueurs.EntrerJoueurDansMiniGolf(joueur);
         GestionJoueurs.EntrerJoueurDansFileAttente("P0002", joueur);
         Afficher();
     }
+
     private static void TestSortirJoueur(Joueur joueur)
     {
         GestionJoueurs.SortirJoueurDuMiniGolf(joueur);
         Afficher();
     }
+
+    /// <summary>
+    /// Entrée du programme.
+    /// </summary>
     public static void Main()
     {
         AffichageConsole.Afficher(MiniGolf, Map, GestionJoueurs);
@@ -36,6 +47,7 @@ public static class Program
             GestionJoueurs.EntrerJoueurDansPiste("P0002");
             Afficher();
         }
+
         TestSortirJoueur(joueur3);
         TestSortirJoueur(joueur4);
         TestSortirJoueur(joueur2);
