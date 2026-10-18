@@ -50,6 +50,7 @@ public class AffichageConsole
             Console.WriteLine();
         }
     }
+    
 
     /// <summary>
     /// Méthode qui affiche l'historique d'un joueur.
