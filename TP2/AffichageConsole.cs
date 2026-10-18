@@ -51,6 +51,7 @@ public class AffichageConsole
         }
     }
     
+    
 
     /// <summary>
     /// Méthode qui affiche l'historique d'un joueur.
